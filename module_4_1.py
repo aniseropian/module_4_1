@@ -1,62 +1,12 @@
-class Animal:
-    def __init__(self, name):
-        self.alive = True
-        self.fed = False
-        self.name = name
+from fake_math import divide as fake_divide
+from true_math import divide as true_divide
 
+result1 = fake_divide(69, 3)
+result2 = fake_divide(3, 0)
+result3 = true_divide(49, 7)
+result4 = true_divide(15, 0)
 
-class Plant:
-    def __init__(self, name):
-        self.edible = False
-        self.name = name
-
-
-class Mammal(Animal):
-    def eat(self, food):
-        if isinstance(food, Plant):
-            if food.edible:
-                print(f"{self.name} съел {food.name}")
-                self.fed = True
-            else:
-                print(f"{self.name} не стал есть {food.name}")
-                self.alive = False
-
-
-class Predator(Animal):
-    def eat(self, food):
-      if isinstance(food, Plant):
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
-
-
-class Flower(Plant):
-    pass
-
-
-class Fruit(Plant):
-    def __init__(self, name):
-        super().__init__(name)
-        self.edible = True
-
-
-# Example usage:
-a1 = Predator('Волк с Уолл-Стрит')
-a2 = Mammal('Хатико')
-p1 = Flower('Цветик семицветик')
-p2 = Fruit('Заводной апельсин')
-
-print(a1.name)
-print(p1.name)
-
-print(a1.alive)
-print(a2.fed)
-
-a1.eat(p1)
-a2.eat(p2)
-
-print(a1.alive)
-print(a2.fed)
+print(result1)  
+print(result2)  
+print(result3)  
+print(result4)  
