@@ -1,5 +1,7 @@
 def divide(first, second):
-    if second == 0:
+    """Divides first by second, returns 'Ошибка' if division by zero."""
+    try:
+        result = first / second
+        return result
+    except ZeroDivisionError:
         return "Ошибка"
-    else:
-        return first / second
